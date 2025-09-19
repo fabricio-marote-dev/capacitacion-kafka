@@ -1,12 +1,11 @@
-package com.example.demo;
+package com.capacitacion.kafka.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-
-public class CapacitacionApplication {
+public class ConsumerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CapacitacionApplication.class, args);
+        SpringApplication.run(ConsumerApplication.class, args);
     }
 }

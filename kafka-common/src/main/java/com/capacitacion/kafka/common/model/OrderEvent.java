@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.capacitacion.kafka.common.model;
 
 public class OrderEvent {
     private String id;
