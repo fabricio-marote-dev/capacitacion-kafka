@@ -14,9 +14,9 @@ public class OrderConsumer {
     private static final Logger logger = LoggerFactory.getLogger(OrderConsumer.class);
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    @KafkaListener(topics = "${app.kafka.topic}", groupId = "${app.kafka.consumer.groupId}")
+    @KafkaListener(topics = "${app.kafka.topic}", groupId = "${app.kafka.consumer.groupId}", concurrency = "${app.kafka.consumer.consumersCount}")
     public void consume(OrderEvent message) throws JsonProcessingException {
         String json = objectMapper.writeValueAsString(message);
-        logger.info("Mensaje recibido: " + json);
+        logger.info("Mensaje recibido en [{}]: {}", Thread.currentThread().getName(), message);
     }
 }
